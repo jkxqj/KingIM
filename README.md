@@ -22,7 +22,7 @@
 ### 图片和文件上传的服务
 [FileUpload.java](https://github.com/jkxqj/webChat/blob/master/FileUpload.java)
 
-如有疑问或者想探讨，欢迎在github给我提issues
+如有疑问或者想探讨，欢迎在github给我提issues，同时欢迎star
  
 
 
