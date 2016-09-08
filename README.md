@@ -2,7 +2,8 @@
 基于websocket的即时通讯系统。
 涉及技术：java、springMVC、mybatis、jquery、layim、mongoDB等等。
 #核心功能
-基于浏览器的私聊和群聊。
+见截图。
+![1](http://7xk9ff.com1.z0.glb.clouddn.com/im1.jpg)
 
 ##好友管理
 - [x] 添加好友：根据好友user_name添加好友
