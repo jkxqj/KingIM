@@ -3,6 +3,7 @@
 涉及技术：java、springMVC、mybatis、jquery、layim、mongoDB等等。
 ##核心功能
 参见[layim演示](http://layim.layui.com/demo.html)
+我这里实现了后端的全部功能。
 
 
  
