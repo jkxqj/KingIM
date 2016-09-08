@@ -1,7 +1,8 @@
-# Chat
-基于websocket的即时聊天系统。java、spring MVC、mybatis、jquery。
-
-
+# webChat
+基于websocket的即时通讯系统。
+涉及技术：java、springMVC、mybatis、jquery、layim、mongoDB等等。
+#核心功能
+基于浏览器的私聊和群聊。
 
 ##好友管理
 - [x] 添加好友：根据好友user_name添加好友
