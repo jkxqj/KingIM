@@ -7,8 +7,8 @@
 包括我踩过的坑：1、java操作mongo 2、离线消息推送的线程同步异步问题等等。
 
 ### websocket的代码实现
-前端[im.js](https://github.com/jkxqj/webChat/blob/master/im.js)
-后端[LL_ws.java](https://github.com/jkxqj/webChat/blob/master/LL_ws.java)
+前端[im.js](https://github.com/jkxqj/webChat/blob/master/im.js?_blank)
+后端[LL_ws.java](https://github.com/jkxqj/webChat/blob/master/LL_ws.java?_blank)
 
 ### 操作mongo的工具类
 [MongoUtils.java](https://github.com/jkxqj/webChat/blob/master/MongoUtils.java)
