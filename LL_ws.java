@@ -1,3 +1,4 @@
+package com.nercel.cyberhouse.ws;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -34,8 +35,10 @@ public class LL_ws {
         addOnlineCount(userId);           //在线数加1,更改数据库用户在线状态为1，在线。
         System.out.println("聊聊有新连接加入！当前在线人数为" + getOnlineCount());
         try{
-            Thread.sleep(2000);
+            Thread.sleep(1000);
             sendUnreadMsg(session,getUnreadMsg(userId));
+            Thread.sleep(1000);
+            sendUnreadMsg(session,getUnreadQunMsg(userId));
         }
         catch (InterruptedException e){
             e.printStackTrace();
@@ -75,13 +78,34 @@ public class LL_ws {
 	         			 session.getBasicRemote().sendText(toJsonArray.get(i).toString());
 		           	     System.out.println("推送离线消息："+toJsonArray.get(i).toString());
 		    		}catch (Exception e) {
-		    			e.printStackTrace();
+		    			 e.printStackTrace();
 		    		}  
 	        	}
 	       }
 	    }
     }
      
+    public JSONArray getUnreadQunMsg(int userId){
+        String msg=llClient.getUnreadQunMsg(userId);
+        JSONArray getJsonArray=JSONArray.fromObject(msg);
+        JSONArray toJsonArray = new JSONArray();
+        for(int i=0;i<getJsonArray.size();i++){
+        	JSONObject getJsonObj = getJsonArray.getJSONObject(i);
+            JSONObject toMessage=new JSONObject();
+            String type=getJsonObj.getJSONObject("offline_message").getString("type");
+            toMessage.put("avatar", getJsonObj.getJSONObject("offline_message").getString("avatar"));  
+            toMessage.put("type",type);      
+            toMessage.put("content", getJsonObj.getJSONObject("offline_message").getString("content"));   
+            toMessage.put("time",getJsonObj.getJSONObject("offline_message").getString("time"));
+            toMessage.put("username",getJsonObj.getJSONObject("offline_message").getString("username"));   
+            toMessage.put("mine",false);
+    	    toMessage.put("id", getJsonObj.getJSONObject("offline_message").getInt("id"));   //如果是群聊，则是群组id
+            toJsonArray.add(toMessage);
+            llClient.updateQunMsgStatus(getJsonObj.getJSONObject("_id").toString().substring(9,33));
+        }
+        return toJsonArray;
+    }
+    
     /**
      * 连接关闭调用的方法
      */
@@ -120,10 +144,11 @@ public class LL_ws {
         toMessage.put("type",type);      
         toMessage.put("content", jsonObject.getJSONObject("mine").getString("content"));   
         toMessage.put("timestamp",date.getTime()); 
+        toMessage.put("time",time); 
         toMessage.put("mine",false);
         toMessage.put("username",jsonObject.getJSONObject("mine").getString("username"));   
 	    if(type.equals("friend")||type.equals("fankui")){
-	    	   toMessage.put("id", jsonObject.getJSONObject("mine").getInt("id"));   
+	    	   toMessage.put("id", jsonObject.getJSONObject("mine").getInt("id"));    
 	    }else{
 	    	   toMessage.put("id", jsonObject.getJSONObject("to").getInt("id"));   
 	    }        
@@ -140,7 +165,7 @@ public class LL_ws {
 				  		  llClient.saveFriendMessage(jsonObject);
 				  		  System.out.println("单聊-对方不在线，消息已存数据库:" + toMessage.toString());
 			    	  }
-				} catch (IOException e) {
+				}catch(IOException e) {
 					e.printStackTrace();
 				}
 			break;
@@ -162,22 +187,23 @@ public class LL_ws {
 			break;
 		case "group":
 			JSONArray memberList=JSONArray.fromObject(llClient.getGroupUser(toId));  //获取在线用户
+			llClient.saveGroupMessage(jsonObject);
 				if(memberList.size()>0){              
 					for(int i=0;i<memberList.size();i++){                            //发送到在线用户(除了发送者)
-						if(map.containsKey(memberList.get(i)) && !memberList.get(i).equals(jsonObject.getJSONObject("mine").getInt("id")+"") ){
+						if(map.containsKey(memberList.get(i)) && !memberList.get(i).equals(jsonObject.getJSONObject("mine").getInt("id")+"")){
 							session=(Session)map.get(memberList.get(i));
 							try {
 								  session.getBasicRemote().sendText(toMessage.toString());
-					    		  jsonObject.put("mStatus",1);                       //消息状态0为未读，1为已读
-					    		  llClient.saveGroupMessage(jsonObject);
 								  System.out.println("群聊-来自客户端的消息:" + toMessage.toString()); 
 							} catch (IOException e) {
-								e.printStackTrace();
+								  e.printStackTrace();
 							}
-						}else{
-							  jsonObject.put("mStatus",0);                           //消息状态0为未读，1为已读
-				    		  llClient.saveGroupMessage(jsonObject);
-				    		  System.out.println("群聊-不在线的用户存入离线消息:" + toMessage.toString());
+						}else if(memberList.get(i).equals(jsonObject.getJSONObject("mine").getInt("id")+"")){
+							      //如果是发送者自己，不做任何操作。
+						}else{    //如果是离线用户,数据存到mongo待用户上线后推送。
+							toMessage.put("userId",Integer.parseInt(memberList.get(i).toString()));
+							toMessage.put("mStatus",0);
+							llClient.saveOfflineMsgToMongo(toMessage);
 						}
 					}
 				}
