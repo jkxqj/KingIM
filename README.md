@@ -26,5 +26,4 @@
  
 
  
-#同时欢迎加入技术交流qq群 439788463
-<a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=7df80668ac9bfa09d04cbc17d94ab83f03ac37531e0de9703f805d9756acd7f4"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="oldriver技术交流群1" title="oldriver技术交流群1"></a>
+#同时欢迎加我qq 1434262447 交流即时通讯和java 相关技术。
