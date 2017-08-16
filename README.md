@@ -30,9 +30,10 @@
 ### 图片和文件上传的服务
 [FileUpload.java](https://github.com/jkxqj/webChat/blob/master/FileUpload.java)
 
-如有疑问或者想探讨，欢迎在github给我提issues，同时欢迎star
- 
 
- 
+
+###如果你有一定的java Web开发基础 根据本工程提供的核心代码即可开发出同样的功能。
+
+如有疑问或者想探讨，欢迎在github给我提issues，同时欢迎star
  
 #同时欢迎加我qq 1434262447 交流即时通讯和java 相关技术。
