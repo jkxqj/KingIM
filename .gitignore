@@ -15,3 +15,4 @@
 /src/main/webapp/WEB-INF/classes/*
 /out/
 src/main/webapp/layim/
+.DS_Store

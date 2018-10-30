@@ -2,11 +2,14 @@
 基于websocket的即时通讯系统。
 涉及技术：java、springMVC、mybatis、jquery、[layim](http://layim.layui.com/demo.html)、redis、mongoDB等等。
 
-### 如果你有一定的java Web开发基础 根据本工程提供的核心代码即可开发出同样的功能。
+如果你有一定的java Web开发基础 根据本工程提供的核心代码即可开发出同样的功能。
 
 如有疑问或者想探讨，欢迎在github给我提issues，同时欢迎star
   
-### 同时欢迎加我wx:jinkaixqj 交流即时通讯和java相关技术,请备注：GitHub jim
+### 欢迎加我wx:jinkaixqj 请备注: jim
+交流即时通讯和java相关技术.
+![1](imgs/Wechat.jpeg)
+
 
 ### 本工程仅用于交流和学习，请勿商用。
 
