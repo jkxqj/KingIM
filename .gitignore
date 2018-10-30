@@ -1,0 +1,17 @@
+*.mymetadata
+*.checkstyle
+*.classpath
+*.project
+*.class
+*.war
+*.jar
+*.zip
+*.rar
+*.idea
+*.iml
+*.log
+.settings/
+/target/
+/src/main/webapp/WEB-INF/classes/*
+/out/
+src/main/webapp/layim/

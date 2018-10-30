@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="jim.dao.FriendTypeMapper" >
+  <resultMap id="BaseResultMap" type="jim.model.FriendType" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="type_name" property="typeName" jdbcType="VARCHAR" />
+    <result column="user_id" property="userId" jdbcType="INTEGER" />
+    <result column="build_time" property="buildTime" jdbcType="TIMESTAMP" />
+    <result column="is_default" property="isDefault" jdbcType="INTEGER" />
+  </resultMap>
+
+
+   <resultMap id="FriendListMap" extends="BaseResultMap" type="jim.model.FriendType">
+ 		<collection property="friends" javaType="list" ofType="jim.model.Friend" resultMap="jim.dao.FriendMapper.Friend_User_Map">
+ 		</collection>
+   </resultMap>
+ 
+	<!-- 根据userId查询好友分组列表   -->
+	<select id="getFriendTypeByUserId" resultMap="FriendListMap">
+		SELECT
+			friend_type.type_name,
+			friend.friend_id,
+			friend.type_id,
+			u.avator,
+			u.sign,
+			u.nick_name
+		FROM
+			friend_type
+		left JOIN friend ON friend.type_id = friend_type.id
+		left JOIN t_user u ON friend.friend_id = u.id
+		WHERE
+			friend_type.user_id = #{userId}
+	</select>
+  
+  
+</mapper>

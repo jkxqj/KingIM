@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="jim.dao.FriendMapper" >
+  <resultMap id="BaseResultMap" type="jim.model.Friend" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="user_id" property="userId" jdbcType="INTEGER" />
+    <result column="friend_id" property="friendId" jdbcType="INTEGER" />
+    <result column="build_time" property="buildTime" jdbcType="TIMESTAMP" />
+    <result column="type_id" property="typeId" jdbcType="INTEGER" />
+  </resultMap>
+  
+  	<resultMap type="jim.model.Friend" id="Friend_User_Map" extends="BaseResultMap">
+		<association property="friendInfo" javaType="jim.model.User"
+			resultMap="jim.dao.UserMapper.JoinMap" />
+	</resultMap>
+	
+	
+</mapper>

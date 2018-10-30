@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+ 
+	<classPathEntry location="D:\maven\repo\mysql\mysql-connector-java\5.1.21\mysql-connector-java-5.1.21.jar" />
+	<context id="DB2Tables" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+	 
+		<plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+			<property name="mappers" value="tk.mybatis.mapper.common.Mapper" />
+			<!-- caseSensitive默认false，当数据库表名区分大小写时，可以将该属性设置为true -->
+			<!-- <property name="caseSensitive" value="true" /> -->
+		</plugin>
+
+        <!-- 阻止生成自动注释 -->
+        <commentGenerator>
+        	<property name="javaFileEncoding" value="UTF-8"/>
+            <property name="suppressAllComments" value="true" />
+            <property name="suppressDate" value="true"/>
+        </commentGenerator>
+         
+         <!-- 数据库连接信息 -->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/webchat" userId="root" password="root">
+        </jdbcConnection>
+        
+        <javaTypeResolver>
+                <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+         
+        <javaModelGenerator targetPackage="jim.model" targetProject="D:\workspace\jim\src\main\java">
+                <property name="enableSubPackages" value="true" />
+                <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+         
+        <sqlMapGenerator targetPackage="model.mapping" targetProject="D:\workspace\jim\src\main\java">
+                <property name="enableSubPackages" value="true" />
+        </sqlMapGenerator>
+         
+        <javaClientGenerator type="XMLMAPPER" targetPackage="jim.dao" targetProject="D:\workspace\jim\src\main\java">
+                <property name="enableSubPackages" value="true" />
+        </javaClientGenerator>
+	 
+	    
+	<table tableName="t_user" domainObjectName="User" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+       <generatedKey column="id" sqlStatement="Mysql"/>       
+    </table>
+    
+	<table tableName="t_group" domainObjectName="Group" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" >
+        <generatedKey column="id" sqlStatement="Mysql"/>         
+    </table>
+    <table tableName="group_user" domainObjectName="GroupUser" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" >
+      <generatedKey column="id" sqlStatement="Mysql"/>             
+    </table>
+    
+    <table tableName="group_message" domainObjectName="GroupMessage" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" >
+            <generatedKey column="id" sqlStatement="Mysql"/>      
+    </table>
+    
+    <table tableName="friend_type" domainObjectName="FriendType" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" >
+          <generatedKey column="id" sqlStatement="Mysql"/>        
+    </table>
+    
+    <table tableName="friend_message" domainObjectName="FriendMessage" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" >
+            <generatedKey column="id" sqlStatement="Mysql"/>  
+    </table>
+    
+    <table tableName="friend" domainObjectName="Friend" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" >
+            <generatedKey column="id" sqlStatement="Mysql"/>
+    </table>
+ 
+
+    
+    
+	</context>
+</generatorConfiguration>
