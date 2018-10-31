@@ -3,7 +3,8 @@
 涉及技术：java、springMVC、mybatis、jquery、[layim](http://layim.layui.com/demo.html)、redis、mongoDB等等。
 
 如果你有一定的java Web开发基础 根据本工程提供的核心代码即可开发出同样的功能。
-
+注意：layim前端参加需要获得授权，故没有上传。
+运行前需准备好redis和mysql.
 如有疑问或者想探讨，欢迎在github给我提issues，同时欢迎star
   
 ### 欢迎加我wx:jinkaixqj 请备注: jim
