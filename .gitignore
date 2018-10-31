@@ -14,8 +14,6 @@
 /target/
 /src/main/webapp/WEB-INF/classes/*
 /out/
-src/main/webapp/layim/
+src/main/webapp/layim/css/modules/layim/
+src/main/webapp/layim/lay/modules/layim.js
 .DS_Store
-!src/main/webapp/layim/im.js
-!src/main/webapp/layim/chatLog.js
-!src/main/webapp/layim/chatLog.jsp
