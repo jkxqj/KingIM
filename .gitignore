@@ -16,3 +16,6 @@
 /out/
 src/main/webapp/layim/
 .DS_Store
+!src/main/webapp/layim/im.js
+!src/main/webapp/layim/chatLog.js
+!src/main/webapp/layim/chatLog.jsp
