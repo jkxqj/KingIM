@@ -2,6 +2,7 @@ package jim.controller;
 
 import javax.servlet.http.HttpSession;
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
 import jim.model.Friend;
 import jim.model.FriendType;
 import jim.model.Group;
@@ -163,6 +164,21 @@ public class UserController {
 		snsinit.setData(data);
 
 		return JSON.toJSONString(snsinit);
+	}
+
+	@RequestMapping(value = "getOfflineMsgFromRedis")
+	public @ResponseBody JSONArray getOfflineMsgFromRedis(int userId) {
+		JSONArray jsonArray = new JSONArray();
+		if (RedisUtils.exists(userId + "_msg"))
+		{
+			Long len = RedisUtils.llen(userId + "_msg");
+			while (len > 0)
+			{
+				jsonArray.add(RedisUtils.rpop(userId + "_msg"));
+				len--;
+			}
+		}
+		return jsonArray;
 	}
 
 }

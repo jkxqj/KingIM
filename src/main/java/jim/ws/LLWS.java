@@ -42,7 +42,8 @@ public class LLWS {
     	 	//更新redis中的用户在线状态
     		RedisUtils.set(userId+"_status","online");
 		    logger.info("用户"+userId+"进入llws,当前在线人数为" + mapUS.size() );
-    }  
+
+	}
   
     //连接关闭调用的方法 
     @OnClose  

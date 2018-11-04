@@ -51,6 +51,7 @@ layui.use('layim', function(layim){
 	
 	// 接收到消息的回调方法
 	socket.onmessage = function(event) {
+		alert(event)
 		console.log("llws收到消息啦:" +event.data);
 		var obj=eval("("+event.data+")");
 		layim.getMessage(obj);  
@@ -94,24 +95,25 @@ layui.use('layim', function(layim){
   });
  
   //layim建立就绪
-  layim.on('ready',function(res){
-	  $(".fankui").click(function(){
-		  var name=$(this).attr('data-name');
-		  var logo=$(this).attr('data-logo');
-		  var id=$(this).attr('data-id');
-		  var sign=$(this).attr('data-sign');
-		  fankui(name,id,logo,sign);
-	  })
+  layim.on('ready',function(){
+  	//获取离线消息
+      $.post("/index/getOfflineMsgFromRedis?userId="+userId,function(res){
+          console.log(res);
+          $.each(res,function(k,v){
+              var s = eval('(' + v + ')');
+              layim.getMessage(s);
+          });
+      });
   });
 
   //监听查看群员
   layim.on('members', function(data){
-    //console.log(data);
+    console.log(data);
   });
   
   //监听聊天窗口的切换
   layim.on('chatChange', function(data){
-    //console.log(data);
+    console.log(data);
   }); 
   
   function fankui(name,id,logo,sign){
