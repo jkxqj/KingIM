@@ -23,17 +23,11 @@
 - [ ] 群视频直播
 
 
-
-
 ###  注意：
 
 - layim前端插件需要获得授权，故没有上传，相关文件位置可以查看gitignore文件。
 - 运行前需准备好redis和mysql.
 - 如有疑问或者想探讨，欢迎在github给我提issues，同时欢迎star
-
-### 欢迎加我weixin请备注: jim
-交流即时通讯和java相关技术.
-![1](imgs/Wechat.jpeg)
 
 
 ### 本工程仅用于交流和学习，请勿商用。
@@ -49,3 +43,6 @@
 ![9](imgs/9.png)
 ![10](imgs/10.png)
 
+### 欢迎加我weixin请备注: jim
+交流即时通讯和java相关技术.
+![1](imgs/Wechat.jpeg)
