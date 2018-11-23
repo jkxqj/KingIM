@@ -26,7 +26,10 @@
 ###  注意：
 
 - layim前端插件需要获得授权，故没有上传，相关文件位置可以查看gitignore文件。
-- 运行前需准备好redis和mysql.
+src/main/webapp/layim/css/modules/layim/
+src/main/webapp/layim/lay/modules/layim.js
+获得layim授权后，上面两处文件需要放入工程对应位置。
+- 运行前需准备好redis和mysql，mysql需要导入webchat.sql文件。
 - 如有疑问或者想探讨，欢迎在github给我提issues，同时欢迎star
 
 
