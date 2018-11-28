@@ -1,4 +1,4 @@
-# JIM
+# KingIM
 基于websocket的即时通讯系统。
 涉及技术：java、springMVC、mybatis、jquery、[layim](http://layim.layui.com/demo.html)、redis、mongoDB等等。
 
@@ -29,8 +29,8 @@
 - 推荐使用IntelliJ IDEA导入工程，推荐使用阿里云的maven镜像下载jar包。
 - 运行前需准备好redis和mysql，mysql需要导入webchat.sql文件。
 
-### 欢迎加我weixin(备注JIM)交流即时通讯和java相关技术
-layim插件可在[官网](http://layim.layui.com)购买，若找本人购买(已获得layim作者授权)可立减100另外还送JIM服务端1对1技术咨询。
+### 欢迎加我weixin(备注KingIM)交流即时通讯和java相关技术
+layim插件可在[官网](http://layim.layui.com)购买，若找本人购买(已获得layim作者授权)可立减100另外还送KingIM服务端1对1技术咨询。
 ![1](imgs/Wechat.jpeg)
 
 ![1](imgs/1.png)
