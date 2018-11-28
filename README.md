@@ -1,6 +1,5 @@
 # KingIM
-原JIM现已改名为KingIM
-基于websocket的即时通讯系统。
+原JIM现已改名为KingIM,基于websocket的即时通讯系统。
 涉及技术：java、springMVC、mybatis、jquery、[layim](http://layim.layui.com/demo.html)、redis、mongoDB等等。
 
 ### 功能点
