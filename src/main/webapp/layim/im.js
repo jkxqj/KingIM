@@ -21,23 +21,22 @@ layui.use('layim', function(layim){
       ,data: {}
     }
     ,uploadImage: {
-       url: '/uploadFile?userId='+userId 
+       url: '/sns/uploadFile?userId='+userId
       ,type: '' //默认post
     }
     ,uploadFile: {
-       url: '/uploadFile?userId='+userId 
+       url: '/sns/uploadFile?userId='+userId
       ,type: '' //默认post
     }
     ,min:true
-    ,find:''  
     ,title: 'KingIM'        //主面板最小化后显示的名称
-    ,chatLog: 'friend/getMsgLog'  //聊天记录地址
+    ,msgbox: layui.cache.dir + 'css/modules/layim/html/msgbox.html' //消息盒子页面地址，若不开启，剔除该项即可
+    ,find: layui.cache.dir + 'css/modules/layim/html/find.html' //发现页面地址，若不开启，剔除该项即可
+    ,chatLog: layui.cache.dir + 'css/modules/layim/html/chatlog.html' //聊天记录页面地址，若不开启，剔除该项即可
     ,copyright: true          //是否授权
     ,right: '30px'
     ,notice:true      //开启桌面消息提醒
- 
-    
-    //,msgbox: layui.cache.dir + 'css/modules/layim/html/msgbox.html' //消息盒子页面地址，若不开启，剔除该项即可
+
   });
  
 	// 连接发生错误的回调方法

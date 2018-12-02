@@ -25,7 +25,7 @@ import java.util.regex.*;
 public class FileUpload {
 	private String ROOT =  ServerConfig.get("root");
 	   @RequestMapping(value = "/uploadFile", produces = "text/plain; charset=utf-8")
-	   public @ResponseBody String uploadFile(@RequestParam(value = "file", required = false) MultipartFile file,int userId,HttpServletRequest request, HttpServletResponse response) {  
+	   public @ResponseBody String uploadFile(@RequestParam(value = "file", required = false) MultipartFile file,int userId,HttpServletRequest request ) {
 			UploadFile upFile = new UploadFile();
 	        String path = request.getSession().getServletContext().getRealPath("upload/sns/"+userId+"/");  
 	        String fileName = StringFilter(file.getOriginalFilename());
@@ -46,9 +46,7 @@ public class FileUpload {
 	    	  upFile.setCode(0);
 	    	  UFile uf=new UFile();
 			  uf.setName(fileName);
-			  byte[] b = null;  
-			  b = fileName.getBytes("utf-8");  
-	    	  uf.setSrc(ROOT+"/sns/downLoadFile?downLoadPath="+downLoadPath+"&fileName="+b);
+	    	  uf.setSrc(ROOT+"/sns/downLoadFile?downLoadPath="+downLoadPath+"&fileName="+fileName);
 	    	  upFile.setData(uf);
 	        } catch (Exception e) {  
 	            e.printStackTrace();  
@@ -58,7 +56,7 @@ public class FileUpload {
 	   
 	   
 		@RequestMapping("/downLoadFile")  
-	    public void downLoadFile(String downLoadPath, String fileName,HttpServletResponse response,HttpServletRequest request) throws UnsupportedEncodingException {  
+	    public void downLoadFile(String downLoadPath, String fileName,HttpServletResponse response ) throws UnsupportedEncodingException {
 	    	    BufferedInputStream bis = null;
 		        BufferedOutputStream bos = null;  
 		        try {
