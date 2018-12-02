@@ -51,7 +51,6 @@ layui.use('layim', function(layim){
 	
 	// 接收到消息的回调方法
 	socket.onmessage = function(event) {
-		alert(event)
 		console.log("llws收到消息啦:" +event.data);
 		var obj=eval("("+event.data+")");
 		layim.getMessage(obj);  
