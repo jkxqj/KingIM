@@ -61,7 +61,7 @@ http://www.springframework.org/schema/aop/spring-aop-4.1.xsd
 		<!-- 自动扫描entity目录, 省掉Configuration.xml里的手工配置 -->
 		<property name="mapperLocations" >
 			<array>
-				<value>classpath*:jim/mapping/*.xml</value>
+				<value>classpath*:kingim/mapping/*.xml</value>
 			</array>
 		</property>
 
@@ -86,7 +86,7 @@ http://www.springframework.org/schema/aop/spring-aop-4.1.xsd
 	
 	<!-- 通用mapper扫描配置 -->
 	<bean class="tk.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="jim.dao" />
+		<property name="basePackage" value="kingim.dao" />
 		<property name="markerInterface" value="tk.mybatis.mapper.common.Mapper" />
 		<property name="properties">
 			<value>
@@ -98,7 +98,7 @@ http://www.springframework.org/schema/aop/spring-aop-4.1.xsd
 
 	<!-- 普通mapper配置 -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="jim.dao" />
+		<property name="basePackage" value="kingim.dao" />
 		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
 	</bean>
 
@@ -138,7 +138,7 @@ http://www.springframework.org/schema/aop/spring-aop-4.1.xsd
 	
 	<aop:config>
 		<aop:pointcut id="transactionPointcut"
-			expression="execution(* jim.service.impl..*.*(..))" />
+			expression="execution(* kingim.service.impl..*.*(..))" />
 		<aop:advisor pointcut-ref="transactionPointcut"
 			advice-ref="transactionAdvice" />
 	</aop:config>
@@ -152,7 +152,7 @@ http://www.springframework.org/schema/aop/spring-aop-4.1.xsd
 		scope="prototype">
 		<property name="patterns">
 			<list>
-				<value>jim.service.*</value>
+				<value>kingim.service.*</value>
 			</list>
 		</property>
 	</bean>

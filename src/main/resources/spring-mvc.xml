@@ -12,7 +12,7 @@ http://www.springframework.org/schema/mvc/spring-mvc-4.1.xsd">
 
 
 	<!-- 自动扫描webchat包下的所有类，使其认为spring mvc的控制器 -->
-	<context:component-scan base-package="jim.controller" />
+	<context:component-scan base-package="kingim.controller" />
 	<!-- access to static resources -->
 	<mvc:default-servlet-handler />
 

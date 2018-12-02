@@ -18,7 +18,7 @@
     <div class="middle-box text-center loginscreen  animated fadeInDown">
         <div>
             <div>
-            <h6 class="logo-name">JIM</h6>
+            <h6 class="logo-name">KingIM</h6>
             </div>
             <h3>基于WebSocket+layim的即时通讯系统</h3>
 			       <form action="/index/loginCheck" method="post">

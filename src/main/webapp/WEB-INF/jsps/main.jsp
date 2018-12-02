@@ -9,7 +9,7 @@
 <input type="hidden" id="userId" value="${user.id}"/>
 
 <a class="layui-btn" href="/index/logout">退出登录</a>
-<p style="font-size:50px; text-align:center;margin-top:20px">Hello JIM!</p>
+<p style="font-size:50px; text-align:center;margin-top:20px">Hello KingIM!</p>
 <p style="font-size:20px; text-align:center;margin:20px">WebSocket、layim、Spring MVC、MyBatis</p>
 
 <script src="/js/jquery.min.js"></script>
