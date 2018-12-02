@@ -1,11 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>oldriver</groupId>
-	<artifactId>JIM</artifactId>
+	<groupId>jkxqj</groupId>
+	<artifactId>KingIM</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>JIM Maven Webapp</name>
+	<name>KingIM Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 	<properties>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -66,7 +66,7 @@
 				<filtering>true</filtering>
 			</resource>
 		</resources>
-		<finalName>jim</finalName>
+		<finalName>kingim</finalName>
 	</build>
 
 	<dependencies>

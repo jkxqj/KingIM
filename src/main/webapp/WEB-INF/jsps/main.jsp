@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <link rel="stylesheet" type="text/css" href="/layim/css/layui.css" media="all"/>
 </head>
-<body style="background-color:#C8C8C8;">
+<body style="background-color:#C8C8C8; height:100%">
 <input type="hidden" id="userId" value="${user.id}"/>
 
 <a class="layui-btn" href="/index/logout">退出登录</a>

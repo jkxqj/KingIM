@@ -30,10 +30,10 @@ layui.use('layim', function(layim){
     }
     ,min:true
     ,find:''  
-    ,title: 'JIM'        //主面板最小化后显示的名称
+    ,title: 'KingIM'        //主面板最小化后显示的名称
     ,chatLog: 'friend/getMsgLog'  //聊天记录地址
     ,copyright: true          //是否授权
-    ,right: '30px' 
+    ,right: '30px'
     ,notice:true      //开启桌面消息提醒
  
     
