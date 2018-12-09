@@ -10,7 +10,9 @@
 
 ---------------------
 - [x] 群聊
-- [ ] 聊天记录
+- [x] 隐身
+- [x] 修改签名
+- [x] 查看聊天记录
 - [ ] 好友管理
 - [ ] 好友分组管理
 - [ ] 群组管理
@@ -19,7 +21,7 @@
 - [ ] 添加好友
 - [ ] 系统通知和提醒
 - [ ] 聊天发送视频和链接
-- [ ] 消息2分钟内可撤回
+- [x] 消息2分钟内可撤回
 - [ ] 群管理员禁言
 
 ---------------------
@@ -29,9 +31,9 @@
 
 ###  注意：
 - layim前端插件需要获得授权，故没有上传，相关文件位置可以查看gitignore文件。
-- 获得layim授权后，src/main/webapp/layim/css/modules/layim/ 和 src/main/webapp/layim/lay/modules/layim.js 两处文件需要放入工程对应位置。
-- 推荐使用IntelliJ IDEA导入工程，推荐使用阿里云的maven镜像下载jar包。
-- 运行前需准备好redis和mysql，mysql需要导入webchat.sql文件。
+- 获得layim授权后，将所购买的layim文件夹直接覆盖本工程的layim文件夹。
+- 请使用IntelliJ IDEA导入本maven工程，导入后选中resources文件夹右键选择mark directory as -> Resources Root。
+- 运行前需准备好redis和mysql，mysql需要导入本工程的webchat.sql文件。
 
 ### 欢迎加我weixin(备注KingIM)交流即时通讯和java相关技术
 layim插件可在[官网](http://layim.layui.com)购买，若找本人购买(已获得layim作者授权)可立减100另外还送KingIM服务端1对1技术咨询。
