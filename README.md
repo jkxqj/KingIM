@@ -1,6 +1,6 @@
 # KingIM
 原JIM现已改名为KingIM,基于websocket的即时通讯系统。
-涉及技术：java、springMVC、mybatis、jquery、[layim](http://layim.layui.com/demo.html)、redis、mongoDB等等。
+涉及技术：java、springMVC、mybatis、jquery、[layim](http://layim.layui.com/demo.html)、redis、mysql等。
 
 ### 功能点
 - [x] 单聊
@@ -12,7 +12,8 @@
 - [x] 群聊
 - [x] 隐身
 - [x] 修改签名
-- [x] 查看聊天记录
+- [ ] 查看聊天记录
+- [ ] 移动端适配
 - [ ] 好友管理
 - [ ] 好友分组管理
 - [ ] 群组管理
@@ -21,7 +22,7 @@
 - [ ] 添加好友
 - [ ] 系统通知和提醒
 - [ ] 聊天发送视频和链接
-- [x] 消息2分钟内可撤回
+- [ ] 消息2分钟内可撤回
 - [ ] 群管理员禁言
 
 ---------------------

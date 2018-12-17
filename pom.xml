@@ -65,6 +65,14 @@
 				</includes>
 				<filtering>true</filtering>
 			</resource>
+			<resource>
+				<directory>src/main/resources</directory>
+				<includes>
+					<include>**/*.properties</include>
+					<include>**/*.xml</include>
+				</includes>
+				<filtering>true</filtering>
+			</resource>
 		</resources>
 		<finalName>kingim</finalName>
 	</build>
