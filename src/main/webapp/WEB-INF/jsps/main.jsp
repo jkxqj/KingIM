@@ -1,6 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <html>
-<title>JIM</title>
+<title>KingIM</title>
 <head>
 <meta charset="utf-8">
 <link rel="stylesheet" type="text/css" href="/layim/css/layui.css" media="all"/>
