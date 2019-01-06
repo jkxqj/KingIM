@@ -36,7 +36,7 @@ public class User {
     /**
      * 头像
      */
-    private String avator;
+    private String avatar;
 
     /**
      * 在线状态：online为在线，hide为隐身，offline为离线
@@ -157,19 +157,19 @@ public class User {
     /**
      * 获取头像
      *
-     * @return avator - 头像
+     * @return avatar - 头像
      */
-    public String getAvator() {
-        return avator;
+    public String getAvatar() {
+        return avatar;
     }
 
     /**
      * 设置头像
      *
-     * @param avator 头像
+     * @param avatar 头像
      */
-    public void setAvator(String avator) {
-        this.avator = avator == null ? null : avator.trim();
+    public void setAvatar(String avatar) {
+        this.avatar = avatar == null ? null : avatar.trim();
     }
 
     /**

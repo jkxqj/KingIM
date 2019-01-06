@@ -28,7 +28,7 @@ public class FriendController {
         mine.put("id", user.getId());
         mine.put("status", "online");
         mine.put("sign", user.getSign());
-        mine.put("avatar", user.getAvator());
+        mine.put("avatar", user.getAvatar());
         map.put("mine", mine);
         return JSON.toJSONString(map);
     }

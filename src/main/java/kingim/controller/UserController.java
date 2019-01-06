@@ -89,10 +89,10 @@ public class UserController {
 		User u=userService.getUserById(userId);
 		SNSUser mine=new SNSUser();
 		mine.setId(u.getId());
-		if(u.getAvator()==null || u.getAvator().equals("")){
+		if(u.getAvatar()==null || u.getAvatar().equals("")){
 			mine.setAvatar("images/avatar/default.png");
 		}else{
-			mine.setAvatar(u.getAvator());
+			mine.setAvatar(u.getAvatar());
 		}
 		mine.setSign(u.getSign());
 		mine.setUsername(u.getNickName());
@@ -124,7 +124,7 @@ public class UserController {
 					int onlineNum=0;
 					for(int j=0;j<friendList.size();j++){
 						SNSUser snsUser = new SNSUser();
-						snsUser.setAvatar(friendList.get(j).getFriendInfo().getAvator());
+						snsUser.setAvatar(friendList.get(j).getFriendInfo().getAvatar());
 						snsUser.setSign(friendList.get(j).getFriendInfo().getSign());
 						snsUser.setUsername(friendList.get(j).getFriendInfo().getNickName());
 						snsUser.setId(friendList.get(j).getFriendId());
@@ -156,7 +156,7 @@ public class UserController {
 				SNSGroup sgroup = new SNSGroup();
 				sgroup.setGroupname(groupList.get(k).getGroupName());
 				sgroup.setId(groupList.get(k).getId());
-				sgroup.setAvatar(groupList.get(k).getAvator());
+				sgroup.setAvatar(groupList.get(k).getAvatar());
 				glist.add(sgroup);
 			}
 			data.setGroup(glist);

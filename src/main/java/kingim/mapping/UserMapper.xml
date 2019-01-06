@@ -10,7 +10,7 @@
     <result column="password" property="password" jdbcType="VARCHAR" />
     <result column="nick_name" property="nickName" jdbcType="VARCHAR" />
     <result column="gender" property="gender" jdbcType="INTEGER" />
-    <result column="avator" property="avator" jdbcType="VARCHAR" />
+    <result column="avatar" property="avatar" jdbcType="VARCHAR" />
     <result column="email" property="email" jdbcType="VARCHAR" />
     <result column="phone" property="phone" jdbcType="VARCHAR" />
     <result column="role_code" property="roleCode" jdbcType="INTEGER" />

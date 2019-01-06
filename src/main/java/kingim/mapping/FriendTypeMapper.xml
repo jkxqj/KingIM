@@ -24,7 +24,7 @@
 			friend_type.type_name,
 			friend.friend_id,
 			friend.type_id,
-			u.avator,
+			u.avatar,
 			u.sign,
 			u.nick_name
 		FROM

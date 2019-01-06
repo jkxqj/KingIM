@@ -24,7 +24,7 @@ public class Group {
     @Column(name = "group_name")
     private String groupName;
 
-    private String avator;
+    private String avatar;
 
     @Column(name = "user_id")
     private Integer userId;
@@ -95,17 +95,17 @@ public class Group {
     }
 
     /**
-     * @return avator
+     * @return avatar
      */
-    public String getAvator() {
-        return avator;
+    public String getAvatar() {
+        return avatar;
     }
 
     /**
-     * @param avator
+     * @param avatar
      */
-    public void setAvator(String avator) {
-        this.avator = avator == null ? null : avator.trim();
+    public void setAvatar(String avatar) {
+        this.avatar = avatar == null ? null : avatar.trim();
     }
 
     /**

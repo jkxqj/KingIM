@@ -48,13 +48,13 @@ public class QunWS {
 		for(int i=0;i<list.size();i++){
 			SNSUser snsUser =new SNSUser();
 			snsUser.setId(list.get(i).getId());
-			snsUser.setAvatar(list.get(i).getUser().getAvator());
+			snsUser.setAvatar(list.get(i).getUser().getAvatar());
 			snsUser.setSign("无个性不签名");
 			snsUser.setUsername(list.get(i).getUser().getUserName());
 			userList.add(snsUser);
 		}
 		SNSUser snsMaster=new SNSUser();
-		snsMaster.setAvatar(groupMaster.getAvator());
+		snsMaster.setAvatar(groupMaster.getAvatar());
 		snsMaster.setId(groupMaster.getId());
 		snsMaster.setSign(groupMaster.getSign());
 		snsMaster.setUsername(groupMaster.getNickName());
