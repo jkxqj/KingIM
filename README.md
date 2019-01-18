@@ -21,14 +21,13 @@
 - [ ] 好友搜索
 - [ ] 添加好友
 - [ ] 系统通知和提醒
-- [ ] 聊天发送视频和链接
-- [ ] 移动端适配
-- [ ] 消息2分钟内可撤回
-- [ ] 群管理员禁言
+- [ ] 聊天发送视频链接
+
 
 
 
 ###  注意：
+- tomcat使用7.0,redis使用3.2默认安装即可不要设置密码，mysql使用5.6。
 - layim前端插件需要获得授权，故没有上传，相关文件位置可以查看gitignore文件。
 - 获得layim授权后，将所购买的layim文件夹直接覆盖本工程的layim文件夹。
 - 请使用IntelliJ IDEA导入本maven工程，导入后选中resources文件夹右键选择mark directory as -> Resources Root。
