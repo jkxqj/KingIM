@@ -49,11 +49,16 @@ layui.use('layim', function(layim){
 	}
 	
 	// 接收到消息的回调方法
-	socket.onmessage = function(event) {
-		console.log("llws收到消息啦:" +event.data);
-		var obj=eval("("+event.data+")");
-		layim.getMessage(obj);  
-	}
+    socket.onmessage = function(res) {
+        console.log("llws收到消息啦:" +res.data);
+        res = eval("("+res.data+")");
+        if(res.type == 'friend' || res.type == 'group'){
+            layim.getMessage(res);
+        }else{
+            layim.setFriendStatus(res.id,res.content);
+        }
+
+    }
 	
 	// 连接关闭的回调方法
 	socket.onclose = function() {

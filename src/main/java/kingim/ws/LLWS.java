@@ -1,5 +1,6 @@
 package kingim.ws;
 
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.concurrent.ConcurrentHashMap;
@@ -28,19 +29,23 @@ public class LLWS {
     //ConcurrentHashMap是线程安全的，而HashMap是线程不安全的。
     private static ConcurrentHashMap<String,Session> mapUS = new ConcurrentHashMap<String,Session>();  
     private static ConcurrentHashMap<Session,String> mapSU = new ConcurrentHashMap<Session,String>();
- 
-    //连接建立成功调用的方法 
-    @OnOpen  
-    public void onOpen(Session session,@PathParam("userId") Integer userId) {  
-    		String jsonString="{'content':'online','id':"+userId+",'type':'onlineStatus'}";
-        	for(Session s:session.getOpenSessions()){	   //循环发给所有在线的人
-    			s.getAsyncRemote().sendText(jsonString);   //上线通知
-    		}
-    		mapUS.put(userId+"",session);    
-    		mapSU.put(session,userId+""); 
-    	 	//更新redis中的用户在线状态
-    		RedisUtils.set(userId+"_status","online");
-		    logger.info("用户"+userId+"进入llws,当前在线人数为" + mapUS.size() );
+
+    //连接建立成功调用的方法
+	@OnOpen
+	public void onOpen(Session session,@PathParam("userId") Integer userId) {
+		String jsonString="{'content':'online','id':"+userId+",'type':'onlineStatus'}";
+		for (String value : mapSU.values()) {
+			try {
+				mapUS.get(value).getBasicRemote().sendText(jsonString);
+			} catch (IOException e) {
+				logger.error(e);
+			}
+		}
+		mapUS.put(userId+"",session);
+		mapSU.put(session,userId+"");
+		//更新redis中的用户在线状态
+		RedisUtils.set(userId+"_status","online");
+		logger.info("用户"+userId+"进入llws,当前在线人数为" + mapUS.size() );
 
 	}
   
@@ -51,10 +56,6 @@ public class LLWS {
     	if(userId!=null&&userId!=""){
     	 	//更新redis中的用户在线状态
     		RedisUtils.set(userId+"_status","offline");
-    		String jsonString="{'content':'offline','id':"+userId+",'type':'onlineStatus'}";
-        	for(Session s:session.getOpenSessions()){	   //循环发给所有在线的人
-    			s.getAsyncRemote().sendText(jsonString);   //下线通知
-    		}
         	mapUS.remove(userId);
         	mapSU.remove(session);
 			logger.info("用户"+userId+"退出llws,当前在线人数为" + mapUS.size());
@@ -71,8 +72,14 @@ public class LLWS {
 				   JSONObject toMessage=new JSONObject();
 	               toMessage.put("id", jsonObject.getJSONObject("mine").getString("id"));  
 	               toMessage.put("content", jsonObject.getJSONObject("mine").getString("content"));
-	               toMessage.put("type",type);     
-				   s.getAsyncRemote().sendText(toMessage.toString());
+	               toMessage.put("type",type);
+					for (String value : mapSU.values()) {
+						try {
+							mapUS.get(value).getBasicRemote().sendText(toMessage.toString());
+						} catch (IOException e) {
+							logger.error(e);
+						}
+					}
 				}
            }else{
                int toId=jsonObject.getJSONObject("to").getInt("id");
@@ -137,10 +144,6 @@ public class LLWS {
     	if(userId!=null&&userId!=""){
     	 	//更新redis中的用户在线状态
     		RedisUtils.set(userId+"_status","offline");
-    		String jsonString="{'content':'offline','id':"+userId+",'type':'onlineStatus'}";
-        	for(Session s:session.getOpenSessions()){		//循环发给所有在线的人
-    			s.getAsyncRemote().sendText(jsonString);   //下线通知
-    		}
         	mapUS.remove(userId);
         	mapSU.remove(session);
 			logger.info("用户"+userId+"退出llws！当前在线人数为" + mapUS.size());

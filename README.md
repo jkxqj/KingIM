@@ -2,14 +2,13 @@
 KingIM,基于websocket、layim的即时通讯系统。
 涉及技术：java、springMVC、mybatis、jquery、[layim](http://layim.layui.com/demo.html)、redis、mysql等。
 
-### 开源功能点
+### 开源免费功能点
 - [x] 单聊
 - [x] 离线消息推送
-- [x] 好友上线头像点亮，下线头像置灰
 - [x] 聊天发送文件和图片
 
 ---------------------
-### kingIM 1.0 付费功能点
+### KingIM 1.0 付费功能点
 - [x] 群聊
 - [x] 隐身
 - [x] 修改签名
@@ -21,6 +20,11 @@ KingIM,基于websocket、layim的即时通讯系统。
 - [x] 好友搜索
 - [x] 添加好友
 - [x] 系统通知和提醒
+- [x] 好友上线头像点亮下线头像置灰
+
+###KingIM 2.0 付费功能点
+- [x] 适配移动端
+
 
 
 ###  注意：
@@ -29,6 +33,7 @@ KingIM,基于websocket、layim的即时通讯系统。
 - 获得layim授权后，将所购买的layim文件夹直接覆盖本工程的layim文件夹。
 - 请使用IntelliJ IDEA导入本maven工程，导入后选中resources文件夹右键选择mark directory as -> Resources Root。
 - 运行前需准备好redis和mysql，mysql需要导入本工程的webchat.sql文件。
+
 
 ### 欢迎加我weixin(备注KingIM)交流即时通讯和java相关技术
 layim插件可在[官网](http://layim.layui.com)购买，若找本人购买源码版(已获得layim作者授权)可立减50元另外还送KingIM服务端1对1技术咨询。
