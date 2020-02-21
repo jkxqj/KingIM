@@ -4,19 +4,19 @@
 	<groupId>jkxqj</groupId>
 	<artifactId>KingIM</artifactId>
 	<packaging>war</packaging>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>KingIM Maven Webapp</name>
-	<url>http://maven.apache.org</url>
+	<version>1.0.0</version>
+	<name>KingIM</name>
+
 	<properties>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.build.timestamp.format>yyyyMMddHHmmss</maven.build.timestamp.format>
 		<spring.version>4.2.6.RELEASE</spring.version>
 		<mybatis.version>3.3.0</mybatis.version>
-        <mybatis-spring.version>1.2.3</mybatis-spring.version>
+		<mybatis-spring.version>1.2.3</mybatis-spring.version>
 		<log4j.version>1.2.17</log4j.version>
 		<mysql.version>5.1.21</mysql.version>
-		<jackson.version>2.10.0</jackson.version>
+		<jackson.version>2.10.2</jackson.version>
 		<mapper.version>3.4.0</mapper.version>
 		<pagehelper.version>4.0.1</pagehelper.version>
 	</properties>
@@ -55,6 +55,7 @@
 					<failOnMissingWebXml>false</failOnMissingWebXml>
 				</configuration>
 			</plugin>
+
 
 		</plugins>
 		<resources>
@@ -171,7 +172,7 @@
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>druid</artifactId>
-			<version>0.2.9</version>
+			<version>1.1.20</version>
 		</dependency>
 		<!-- JSTL标签类 -->
 		<dependency>
@@ -190,7 +191,7 @@
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>fastjson</artifactId>
-			<version>1.2.31</version>
+			<version>1.2.60</version>
 		</dependency>
 		<!-- 映入JSON -->
 		<dependency>
@@ -261,6 +262,12 @@
 			<groupId>redis.clients</groupId>
 			<artifactId>jedis</artifactId>
 			<version>2.8.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>cn.hutool</groupId>
+			<artifactId>hutool-all</artifactId>
+			<version>5.0.6</version>
 		</dependency>
 
 	</dependencies>

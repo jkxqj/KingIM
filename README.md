@@ -1,6 +1,6 @@
 # KingIM
-KingIM,基于websocket、layim的即时通讯系统。
-涉及技术：java、springMVC、mybatis、jquery、[layim](http://layim.layui.com/demo.html)、redis、mysql等。
+KingIM,基于websocket、netty、layim的即时通讯系统。
+涉及技术：java、netty、springMVC、mybatis、jquery、[layim](http://layim.layui.com/demo.html)、redis、mysql等。
 
 ### 开源免费功能点
 - [x] 单聊
@@ -8,7 +8,7 @@ KingIM,基于websocket、layim的即时通讯系统。
 - [x] 聊天发送文件和图片
 
 ---------------------
-### KingIM 1.0 付费功能点
+### KingIM付费版功能点
 - [x] 群聊
 - [x] 隐身
 - [x] 修改签名
@@ -26,6 +26,7 @@ KingIM,基于websocket、layim的即时通讯系统。
 
 
 ###  注意：
+- 不论是付费版还是开源免费版都需要layim插件才能看到效果，找我购买更优惠。
 - tomcat使用7.0,redis使用3.2默认安装即可不要设置密码，mysql使用5.6。
 - layim前端插件需要获得授权，故没有上传，相关文件位置可以查看gitignore文件。
 - 获得layim授权后，将所购买的layim文件夹直接覆盖本工程的layim文件夹。
@@ -33,10 +34,9 @@ KingIM,基于websocket、layim的即时通讯系统。
 - 运行前需准备好redis和mysql，mysql需要导入本工程的webchat.sql文件。
 
 
-### 欢迎加我weixin(备注KingIM)交流即时通讯和java相关技术
-layim插件可在[官网](http://layim.layui.com)购买，若找本人购买源码版(已获得layim作者授权)可立减50元另外还送KingIM服务端1对1技术咨询。
+### 欢迎加我weixin(备注KingIM)购买付费版
 ![1](imgs/Wechat.jpeg)
-
+下图均为付费版截图
 ![1](imgs/1.png)
 ![2](imgs/2.png)
 ![3](imgs/3.png)

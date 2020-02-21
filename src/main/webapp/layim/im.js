@@ -1,7 +1,7 @@
 var userId=$("#userId").val();
 var socket = null;  // 判断当前浏览器是否支持WebSocket
 if ('WebSocket' in window) {
-	socket = new WebSocket("ws://localhost:8080/LLWS/"+userId);
+	socket = new WebSocket("ws://127.0.0.1:8888/ws/");
 } else {
 	alert('该浏览器不支持本系统即时通讯功能，推荐使用谷歌或火狐浏览器！');
 }

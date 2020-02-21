@@ -1,5 +1,6 @@
 package kingim.service.impl;
 
+import cn.hutool.crypto.SecureUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import kingim.dao.UserMapper;
@@ -24,7 +25,7 @@ public class UserServiceImpl  extends BaseServiceImpl<User> implements UserServi
      public User matchUser(String userName,String password) {
     	 User record=new User();
     	 record.setUserName(userName);
-    	 record.setPassword(password);
+    	 record.setPassword(SecureUtil.md5(password));
          return userMapper.selectOne(record);
      }
 

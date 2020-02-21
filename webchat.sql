@@ -184,10 +184,10 @@ CREATE TABLE `t_user` (
 -- ----------------------------
 -- Records of t_user
 -- ----------------------------
-INSERT INTO `t_user` VALUES ('1', 'jk', 'jk', '跳跳猴', '0', '/images/me.jpg', null, null, '2', null, '666');
-INSERT INTO `t_user` VALUES ('2', 'u2', '123', '马云', '0', '/images/boy-01.png', null, null, '1', null, '不就是钱嘛！');
-INSERT INTO `t_user` VALUES ('3', 'u3', '123', '马化腾', '0', '/images/boy-02.png', null, null, '1', null, 'sugar');
-INSERT INTO `t_user` VALUES ('4', 'u4', '123', '雷军', '0', '/images/boy-03.png', null, null, '1', null, '椰子皮');
-INSERT INTO `t_user` VALUES ('5', 'u5', '123', '新垣结衣', '1', '/images/girl-01.png', null, null, '1', null, '个性签名');
-INSERT INTO `t_user` VALUES ('6', 'u6', '123', '梭梭酱', '1', '/images/girl-02.png', null, null, '1', null, '朴实无华，你的根本');
-INSERT INTO `t_user` VALUES ('7', 'u7', '123', 'papi酱', '1', '/images/girl-03.png', null, null, '1', null, '美貌与才华于一身');
+INSERT INTO `t_user` VALUES ('1', 'jk', '202cb962ac59075b964b07152d234b70', '跳跳猴', '0', '/images/me.jpg', null, null, '2', null, '666');
+INSERT INTO `t_user` VALUES ('2', 'u2', '202cb962ac59075b964b07152d234b70', '马云', '0', '/images/boy-01.png', null, null, '1', null, '不就是钱嘛！');
+INSERT INTO `t_user` VALUES ('3', 'u3', '202cb962ac59075b964b07152d234b70', '马化腾', '0', '/images/boy-02.png', null, null, '1', null, 'sugar');
+INSERT INTO `t_user` VALUES ('4', 'u4', '202cb962ac59075b964b07152d234b70', '雷军', '0', '/images/boy-03.png', null, null, '1', null, '椰子皮');
+INSERT INTO `t_user` VALUES ('5', 'u5', '202cb962ac59075b964b07152d234b70', '新垣结衣', '1', '/images/girl-01.png', null, null, '1', null, '个性签名');
+INSERT INTO `t_user` VALUES ('6', 'u6', '202cb962ac59075b964b07152d234b70', '梭梭酱', '1', '/images/girl-02.png', null, null, '1', null, '朴实无华，你的根本');
+INSERT INTO `t_user` VALUES ('7', 'u7', '202cb962ac59075b964b07152d234b70', 'papi酱', '1', '/images/girl-03.png', null, null, '1', null, '美貌与才华于一身');
