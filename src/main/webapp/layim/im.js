@@ -1,17 +1,13 @@
 var userId=$("#userId").val();
 var socket = null;  // 判断当前浏览器是否支持WebSocket
-if ('WebSocket' in window) {
-	socket = new WebSocket("ws://127.0.0.1:8888/ws/");
-} else {
-	alert('该浏览器不支持本系统即时通讯功能，推荐使用谷歌或火狐浏览器！');
-}
+var address = "ws://localhost:8888/ws";
 layui.use('layim', function(layim){
   var autoReplay = [
     '您好，我现在有事不在，一会儿再和您联系。'
   ];
  layim.config({ 
     init: {
-      url: '/index/getInitList?userId='+userId
+      url: 'index/getInitList?userId='+userId
       ,data: {}
     }
     ,brief: false
@@ -21,11 +17,11 @@ layui.use('layim', function(layim){
       ,data: {}
     }
     ,uploadImage: {
-       url: '/sns/uploadFile?userId='+userId
+       url: 'sns/uploadFile?userId='+userId
       ,type: '' //默认post
     }
     ,uploadFile: {
-       url: '/sns/uploadFile?userId='+userId
+       url: 'sns/uploadFile?userId='+userId
       ,type: '' //默认post
     }
     ,min:true
@@ -38,14 +34,32 @@ layui.use('layim', function(layim){
     ,notice:true      //开启桌面消息提醒
 
   });
- 
+
+    if(!window.WebSocket){
+        window.WebSocket = window.MozWebSocket;
+    }
+    if(window.WebSocket){
+        socket = new WebSocket(address);
+    }else{
+        alert('该浏览器不支持本系统即时通讯功能，推荐使用谷歌或火狐浏览器！');
+    }
+
 	// 连接发生错误的回调方法
 	socket.onerror = function() {
 		console.log("llws连接失败!");
 	};
 	// 连接成功建立的回调方法
 	socket.onopen = function(event) {
-		console.log("llws连接成功!");
+	   var obj={
+               "content":"online",
+               "userId":userId,
+               "to":{
+                "type":"onlineStatus"
+               }
+			  }
+	    console.log(JSON.stringify(obj));
+	    console.log("socket onopen---ws readyState:"+socket.readyState);
+		socket.send(JSON.stringify(obj));  	//发送消息到WebSocket服务
 	}
 	
 	// 接收到消息的回调方法
@@ -57,9 +71,8 @@ layui.use('layim', function(layim){
         }else{
             layim.setFriendStatus(res.id,res.content);
         }
-
     }
-	
+
 	// 连接关闭的回调方法
 	socket.onclose = function() {
 		console.log("llws关闭连接!");
@@ -84,12 +97,12 @@ layui.use('layim', function(layim){
 					   "id":data.to.id,
 					   "name":data.to.groupname,
 					   "sign":data.to.sign,
-					   "type":data.to.type,       
+					   "type":data.to.type,
 					   "username":data.to.username
-				 }
+				 },
 			   }
 	    console.log(JSON.stringify(obj));
-		socket.send(JSON.stringify(obj));  	//发送消息倒Socket服务
+		socket.send(JSON.stringify(obj));  	//发送消息到WebSocket服务
    });
     
   //监听在线状态的切换事件
@@ -97,18 +110,6 @@ layui.use('layim', function(layim){
     console.log(data);
   });
  
-  //layim建立就绪
-  layim.on('ready',function(){
-  	//获取离线消息
-      $.post("/index/getOfflineMsgFromRedis?userId="+userId,function(res){
-          console.log(res);
-          $.each(res,function(k,v){
-              var s = eval('(' + v + ')');
-              layim.getMessage(s);
-          });
-      });
-  });
-
   //监听查看群员
   layim.on('members', function(data){
     console.log(data);
@@ -118,18 +119,7 @@ layui.use('layim', function(layim){
   layim.on('chatChange', function(data){
     console.log(data);
   }); 
-  
-  function fankui(name,id,logo,sign){
-	  var iid=Number(id);
-	  layim.chat({
-		   sign:sign
-		  ,name: name
-		  ,type: 'fankui'  
-		  ,avatar: logo 
-		  ,id:iid  
-		});
-   }
-  
+
   layim.on('sign', function(value){
 	  //console.log(value.length); //获得新的签名
 	  if(value.length<200){
@@ -144,5 +134,14 @@ layui.use('layim', function(layim){
 });
 
 
-
+$(function () {
+  	//获取离线消息
+      $.post("index/getOfflineMsgFromRedis?userId="+userId,function(res){
+          console.log("getOfflineMsgFromRedis:"+res);
+          $.each(res,function(k,v){
+              var s = eval('(' + v + ')');
+              layim.getMessage(s);
+          });
+      });
+})
 

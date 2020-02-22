@@ -1,4 +1,4 @@
-package kingim.ws;
+package kingim.controller;
 
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +17,7 @@ import kingim.utils.RedisUtils;
 
 @Controller
 @RequestMapping("api/friend")
-public class FriendWS {
+public class ApiFriendController {
 	@Autowired
 	private FriendService friendService;
 	@Autowired
@@ -81,7 +81,7 @@ public class FriendWS {
 	
 
 	
-	// 获取好友历史消息 FromMongo 页面
+	// 获取好友历史消息
 	@RequestMapping(value = "msgBoxPage", produces = "text/plain; charset=utf-8")
 	public String msgBoxPage(HttpSession session,Model model) {
 		User userInfo=(User) session.getAttribute("userInfo");

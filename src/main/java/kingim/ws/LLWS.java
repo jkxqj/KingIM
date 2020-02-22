@@ -12,6 +12,7 @@ import javax.websocket.Session;
 import javax.websocket.server.PathParam;
 import javax.websocket.server.ServerEndpoint;
 
+import kingim.controller.ApiQunController;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import kingim.utils.RedisUtils;
@@ -24,7 +25,7 @@ public class LLWS {
 	private static Logger logger = Logger.getLogger(LLWS.class);
 
 	@Autowired
-	QunWS qunWS;
+	ApiQunController qunWS;
 	
     //ConcurrentHashMap是线程安全的，而HashMap是线程不安全的。
     private static ConcurrentHashMap<String,Session> mapUS = new ConcurrentHashMap<String,Session>();  
@@ -150,8 +151,8 @@ public class LLWS {
     	}
 		logger.error("llws发生错误!");
         error.printStackTrace();
-    }  
-    
+    }
+
     /** 
      * 这个方法与上面几个方法不一样。没有用注解，是根据自己需要添加的方法。 
      */  

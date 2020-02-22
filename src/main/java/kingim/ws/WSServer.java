@@ -1,6 +1,7 @@
 package kingim.ws;
 
 import io.netty.bootstrap.ServerBootstrap;
+import io.netty.channel.Channel;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
@@ -8,7 +9,8 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Component;
 
-@Component
+import javax.annotation.PostConstruct;
+
 public class WSServer {
 
 	private static Logger logger = Logger.getLogger(WSServer.class);
@@ -21,23 +23,22 @@ public class WSServer {
 		return SingletionWSServer.instance;
 	}
 	
-	private EventLoopGroup mainGroup;
-	private EventLoopGroup subGroup;
+	private EventLoopGroup boss;
+	private EventLoopGroup worker;
 	private ServerBootstrap server;
 	private ChannelFuture future;
 	
 	public WSServer() {
-		mainGroup = new NioEventLoopGroup();
-		subGroup = new NioEventLoopGroup();
+		boss = new NioEventLoopGroup();
+		worker = new NioEventLoopGroup();
 		server = new ServerBootstrap();
-		server.group(mainGroup, subGroup)
-			.channel(NioServerSocketChannel.class)
+		server.group(boss, worker).channel(NioServerSocketChannel.class)
 			.childHandler(new WSServerInitialzer());
 	}
-	
+
 	public void start() {
 		int port = 8888;
-		this.future = server.bind(port);
-		logger.info("netty websocket server 启动完毕,端口：" + port);
+		future = server.bind(port);
+		logger.info("Netty WebSocket服务器启动成功,端口：" + port);
 	}
 }

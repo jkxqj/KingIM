@@ -1,4 +1,4 @@
-package kingim.ws;
+package kingim.controller;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -22,7 +22,7 @@ import java.util.regex.*;
 
 @Controller
 @RequestMapping("sns")
-public class FileUpload {
+public class FileUploadController {
 	private String ROOT =  ServerConfig.get("root");
 	   @RequestMapping(value = "/uploadFile", produces = "text/plain; charset=utf-8")
 	   public @ResponseBody String uploadFile(@RequestParam(value = "file", required = false) MultipartFile file,int userId,HttpServletRequest request ) {

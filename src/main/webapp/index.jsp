@@ -8,6 +8,6 @@
 <title>首页</title>
 </head>
 <body>
-	<jsp:forward page="/index/login" />
+	<jsp:forward page="index/login" />
 </body>
 </html>

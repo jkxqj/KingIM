@@ -1,16 +1,16 @@
 # KingIM
-KingIM,基于websocket、netty、layim的即时通讯系统。
-涉及技术：java、netty、springMVC、mybatis、jquery、[layim](http://layim.layui.com/demo.html)、redis、mysql等。
+KingIM是基于netty的性能强悍的实时通讯系统，前端使用了layim插件。
+涉及技术：netty、springMVC、mybatis、jquery、[layim](http://layim.layui.com/demo.html)、redis、mysql等。
 
 ### 开源免费功能点
 - [x] 单聊
-- [x] 离线消息推送
 - [x] 聊天发送文件和图片
 
 ---------------------
-### KingIM付费版功能点
+### KingIM 1.0 付费版功能点
+- [x] 离线消息推送
 - [x] 群聊
-- [x] 隐身
+- [x] 在线状态的实时同步
 - [x] 修改签名
 - [x] 查看聊天记录
 - [x] 好友管理
@@ -20,10 +20,8 @@ KingIM,基于websocket、netty、layim的即时通讯系统。
 - [x] 好友搜索
 - [x] 添加好友
 - [x] 系统通知和提醒
-- [x] 好友上线头像点亮下线头像置灰
-- [x] 适配移动端页面
-
-
+- [x] 好友上线头像点亮下线或隐身头像置灰
+- [x] 适配移动端h5页面
 
 ###  注意：
 - 不论是付费版还是开源免费版都需要layim插件才能看到效果，找我购买更优惠。

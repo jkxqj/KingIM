@@ -1,17 +1,26 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%
+    String path = request.getContextPath();
+    String basePath = request.getScheme() + "://"
+            + request.getServerName() + ":" + request.getServerPort()
+            + path + "/";
+%>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KingIM</title>
-    <link rel="shortcut icon" href="favicon.ico"> <link href="/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
-    <link href="/css/animate.min.css" rel="stylesheet">
-    <link href="/css/style.min.css?v=4.1.0" rel="stylesheet">
+    <base href="<%=basePath%>"></base>
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/style.min.css?v=4.1.0" rel="stylesheet">
     <!--[if lt IE 9]>
     <meta http-equiv="refresh" content="0;ie.html" />
     <![endif]-->
+
 </head>
 
 <body class="gray-bg">
@@ -20,8 +29,8 @@
             <div>
             <h6 class="logo-name">KingIM</h6>
             </div>
-            <h3>基于WebSocket+layim的即时通讯系统</h3>
-			       <form action="/index/loginCheck" method="post">
+            <h3>基于netty+WebSocket+layim的即时通讯系统</h3>
+			       <form action="index/loginCheck" method="post">
 			              <div class="form-group">
 			                  <input type="username" class="form-control" placeholder="用户名" name="userName" required/>
 			              </div>

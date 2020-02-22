@@ -1,4 +1,4 @@
-package kingim.ws;
+package kingim.controller;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +18,7 @@ import kingim.vo.SNSUser;
 
 @Controller
 @RequestMapping("api/qun")
-public class QunWS {
+public class ApiQunController {
  
   @Autowired
   private GroupUserService groupUserService;

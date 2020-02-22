@@ -54,7 +54,7 @@ public class UserController {
 	 * @param password   密码
 	 */
 	@RequestMapping(value = "loginCheck", method = RequestMethod.POST)
-	public String loginCheck(HttpSession session,Model model, String userName, String password) {
+	public String loginCheck(HttpSession session, Model model, String userName, String password) {
 		// 是否存在用户
 		String url="login";
 		User user = userService.matchUser(userName,password);
