@@ -36,7 +36,7 @@ KingIM是基于netty的性能强悍的实时通讯系统，前端使用了layim�
 - 运行前需准备好redis和mysql，mysql需要导入本工程的kingim.sql文件。
 
 
-### 欢迎加我weixin(备注KingIM)购买付费版
+### 欢迎加我wx: jinkaixqj (备注KingIM)购买付费版
 ![1](imgs/Wechat.jpeg)
 下图均为付费版截图
 ![1](imgs/1.png)
