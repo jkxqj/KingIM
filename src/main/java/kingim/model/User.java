@@ -60,8 +60,6 @@ public class User {
     @Column(name = "role_code")
     private Integer roleCode;
 
-    private String version;
-
     private String sign;
 
     /**
@@ -242,20 +240,6 @@ public class User {
      */
     public void setRoleCode(Integer roleCode) {
         this.roleCode = roleCode;
-    }
-
-    /**
-     * @return version
-     */
-    public String getVersion() {
-        return version;
-    }
-
-    /**
-     * @param version
-     */
-    public void setVersion(String version) {
-        this.version = version == null ? null : version.trim();
     }
 
     /**

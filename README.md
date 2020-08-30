@@ -33,7 +33,7 @@ KingIM是基于netty的性能强悍的实时通讯系统，前端使用了layim�
 - layim前端插件需要获得授权，故没有上传，相关文件位置可以查看gitignore文件。
 - 获得layim授权后，将所购买的layim文件夹直接覆盖本工程的layim文件夹。
 - 请使用IntelliJ IDEA导入本maven工程，导入后选中resources文件夹右键选择mark directory as -> Resources Root。
-- 运行前需准备好redis和mysql，mysql需要导入本工程的webchat.sql文件。
+- 运行前需准备好redis和mysql，mysql需要导入本工程的kingim.sql文件。
 
 
 ### 欢迎加我weixin(备注KingIM)购买付费版

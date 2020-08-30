@@ -14,7 +14,6 @@
     <result column="email" property="email" jdbcType="VARCHAR" />
     <result column="phone" property="phone" jdbcType="VARCHAR" />
     <result column="role_code" property="roleCode" jdbcType="INTEGER" />
-    <result column="version" property="version" jdbcType="VARCHAR" />
     <result column="sign" property="sign" jdbcType="VARCHAR" />
   </resultMap>
   
