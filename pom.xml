@@ -16,7 +16,7 @@
 		<mybatis-spring.version>1.2.3</mybatis-spring.version>
 		<log4j.version>2.13.2</log4j.version>
 		<mysql.version>8.0.16</mysql.version>
-		<jackson.version>2.10.2</jackson.version>
+		<jackson.version>2.12.1</jackson.version>
 		<mapper.version>3.4.0</mapper.version>
 		<pagehelper.version>4.0.1</pagehelper.version>
 		<netty.version>4.1.45.Final</netty.version>
