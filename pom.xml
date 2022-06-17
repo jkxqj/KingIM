@@ -20,7 +20,7 @@
 		<mapper.version>3.4.0</mapper.version>
 		<pagehelper.version>4.0.1</pagehelper.version>
 		<netty.version>4.1.45.Final</netty.version>
-		<fastjson.version>1.2.70</fastjson.version>
+		<fastjson.version>1.2.83</fastjson.version>
 	</properties>
 
 	<repositories>
