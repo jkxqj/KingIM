@@ -2,6 +2,10 @@
 KingIM是基于netty的性能强悍的实时通讯系统，前端使用了layim插件。
 涉及技术：netty、springMVC、mybatis、vuejs、jquery、[layim](http://layim.layui.com/demo.html)、redis、mysql等。
 
+## Star History
+[![Star History Chart](https://api.star-history.com/svg?repos=jkxqj/kingim&type=Date)](https://star-history.com/#jkxqj/kingim&Date)
+
+
 ### 开源免费功能点
 - [x] 单聊
 - [x] 聊天发送文件和图片
